@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="selected_rule_color">#43A047</color>
+
+    <color name="default_rule_stoke_color">#A2A3A2</color>
+
+    <color name="rule_color_even">#43A047</color>
+    <color name="rule_color_odd">#1E88E5</color>
+    <color name="rule_color_prime">#E53935</color>
+    <color name="rule_color_fibonacci">#FB8C00</color>
+</resources>
