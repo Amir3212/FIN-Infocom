@@ -40,5 +40,51 @@ fun getBgColor(id: RuleIDS): Int {
         RuleIDS.ODD -> R.color.rule_color_odd
         RuleIDS.PRIME -> R.color.rule_color_prime
         RuleIDS.FIBONACCI -> R.color.rule_color_fibonacci
+        RuleIDS.PALINDROME -> R.color.rule_color_palindrome
+        RuleIDS.ARMSTRONG -> R.color.rule_color_armstrong
+        RuleIDS.PERFECT_NUMBER -> R.color.rule_color_perfect_number
     }
+}
+
+
+fun Int.isPalindrome(): Boolean {
+
+    var originalNumber = this
+    var reversedNumber = 0
+    var remainder: Int
+
+    while (originalNumber != 0) {
+        remainder = originalNumber % 10
+        reversedNumber = reversedNumber * 10 + remainder
+        originalNumber /= 10
+    }
+
+    return this == reversedNumber
+}
+
+fun Int.isPerfectNumber(): Boolean {
+    val number = this
+    var sum = 1
+    for (i in 2..number / 2) {
+        if (number % i == 0) {
+            sum += i
+        }
+    }
+    return sum == number
+}
+
+fun Int.isArmstrong(): Boolean {
+    val number = this
+    val numStr = number.toString()
+    val numDigits = numStr.length
+    var sum = 0
+    var num = number
+
+    while (num != 0) {
+        val digit = num % 10
+        sum += Math.pow(digit.toDouble(), numDigits.toDouble()).toInt()
+        num /= 10
+    }
+
+    return sum == number
 }

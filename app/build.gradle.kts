@@ -20,6 +20,25 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+    flavorDimensions.add("environment")
+
+    productFlavors {
+        create("development") {
+            dimension = "environment"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            buildConfigField("String", "API_URL", "\"https://dev.example.com/api\"")
+        }
+
+        create("production") {
+            dimension = "environment"
+            applicationIdSuffix = ".prod"
+            versionNameSuffix = "-prod"
+            buildConfigField("String", "API_URL", "\"https://api.example.com/api\"")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -38,7 +57,9 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true  // Enable the BuildConfig feature to use buildConfigField
     }
+
 }
 
 dependencies {

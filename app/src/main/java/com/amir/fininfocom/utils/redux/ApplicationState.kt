@@ -18,6 +18,9 @@ fun getRuleList(): List<RuleModel> {
     list.add(RuleModel(rule = "Odd", id = RuleIDS.ODD))
     list.add(RuleModel(rule = "Prime", id = RuleIDS.PRIME))
     list.add(RuleModel(rule = "Fibonacci", id = RuleIDS.FIBONACCI))
+    list.add(RuleModel(rule = "Palindrome", id = RuleIDS.PALINDROME))
+    list.add(RuleModel(rule = "Armstrong", id = RuleIDS.ARMSTRONG))
+    list.add(RuleModel(rule = "PerfectNumber", id = RuleIDS.PERFECT_NUMBER))
     return list
 }
 

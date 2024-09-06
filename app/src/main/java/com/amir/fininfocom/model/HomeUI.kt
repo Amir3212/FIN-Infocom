@@ -18,7 +18,7 @@ data class RuleModel(
 )
 
 enum class RuleIDS {
-    EVEN, ODD, PRIME, FIBONACCI
+    EVEN, ODD, PRIME, FIBONACCI, PALINDROME, ARMSTRONG, PERFECT_NUMBER
 }
 
 data class RuleUI(

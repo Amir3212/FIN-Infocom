@@ -10,7 +10,6 @@ data class HeaderEpoxyModel(
 ) : ViewBindingKotlinModel<HeaderViewBinding>(R.layout.header_view) {
     override fun HeaderViewBinding.bind() {
         textView3.text = header
-
     }
 
     override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int {

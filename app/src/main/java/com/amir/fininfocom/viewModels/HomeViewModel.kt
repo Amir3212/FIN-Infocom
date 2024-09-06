@@ -10,6 +10,9 @@ import com.amir.fininfocom.model.RuleModel
 import com.amir.fininfocom.model.RuleUI
 import com.amir.fininfocom.utils.getBgColor
 import com.amir.fininfocom.utils.getFibonacciSeries
+import com.amir.fininfocom.utils.isArmstrong
+import com.amir.fininfocom.utils.isPalindrome
+import com.amir.fininfocom.utils.isPerfectNumber
 import com.amir.fininfocom.utils.isPrime
 import com.amir.fininfocom.utils.redux.ApplicationState
 import com.amir.fininfocom.utils.redux.Store
@@ -82,10 +85,40 @@ class HomeViewModel @Inject constructor(
                 RuleIDS.ODD -> updateForOdd()
                 RuleIDS.PRIME -> updateForPrime()
                 RuleIDS.FIBONACCI -> updateForFibonacci()
+                RuleIDS.PALINDROME -> updateForPalindrome()
+                RuleIDS.ARMSTRONG -> updateForArmstrong()
+                RuleIDS.PERFECT_NUMBER -> updateForPerfectNumber()
             }
         }
 
 
+    }
+
+    private fun updateForPerfectNumber() {
+        scope.launch {
+            val idsToUpdate = numbers.filter {
+                it.text.toInt().isPerfectNumber()
+            }.map { it.id }.toSet()
+            updateIds(idsToUpdate)
+        }
+    }
+
+    private fun updateForArmstrong() {
+        scope.launch {
+            val idsToUpdate = numbers.filter {
+                it.text.toInt().isArmstrong()
+            }.map { it.id }.toSet()
+            updateIds(idsToUpdate)
+        }
+    }
+
+    private fun updateForPalindrome() {
+        scope.launch {
+            val idsToUpdate = numbers.filter {
+                it.text.toInt().isPalindrome()
+            }.map { it.id }.toSet()
+            updateIds(idsToUpdate)
+        }
     }
 
     private fun updateForFibonacci() {

@@ -10,4 +10,7 @@
     <color name="rule_color_odd">#1E88E5</color>
     <color name="rule_color_prime">#E53935</color>
     <color name="rule_color_fibonacci">#FB8C00</color>
+    <color name="rule_color_palindrome">#8E24AA</color>
+    <color name="rule_color_armstrong">#00ACC1</color>
+    <color name="rule_color_perfect_number">#00897B</color>
 </resources>
